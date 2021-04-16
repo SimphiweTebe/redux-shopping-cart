@@ -1,0 +1,46 @@
+.item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 100rem;
+    margin: 4rem auto;
+
+
+    &__image{
+        display: block;
+        width: 50%;
+        margin-right: 3rem
+    }
+
+    &__details{
+        position: inherit;
+
+        &--title{
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        &--desc{
+            margin-bottom: 2rem;
+        }
+        &--price{
+            margin-bottom: 2rem;
+            font-weight: 700;
+            color: red;
+            font-size: 2.5rem;
+        }
+
+        &--add{
+            padding: 1.3rem 1rem;
+            font-size: 1.4rem;
+            background: #000;
+            color: #fff;
+            font-weight: 500;
+            cursor: pointer;
+            min-width: 20rem;
+        }
+    }
+}

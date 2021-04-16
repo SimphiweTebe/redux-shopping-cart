@@ -1,0 +1,47 @@
+.nav{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #000;
+    color: #fff;
+    padding: 2rem 0;
+
+    a{
+        color: #fff;
+    }
+
+    &__container{
+        width: 95%;
+        max-width: 120rem;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &--logo{
+            position: relative;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+
+        &--cart{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-width: 100px;
+
+            p{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem;
+                background: red;
+                min-width: 5rem;
+                border-radius: 1rem;
+                margin-left: 1rem;
+            }
+        }
+    }
+}
