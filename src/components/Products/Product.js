@@ -15,11 +15,11 @@ function Product({product}) {
         </div>
 
         <div className="product__buttons">
-            <Link to={`/product/`}>
+            
             <button className="product__buttons--view">
-                View Item
+            <Link to={`/product/${product.id}`}>View Item</Link>
             </button>
-            </Link>
+            
             <button className="product__buttons--add">
             Add To Cart
             </button>

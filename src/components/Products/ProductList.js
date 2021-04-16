@@ -1,4 +1,6 @@
 import React from 'react';
+import './Products.scss';
+
 import Product from './Product';
 import {products} from '../../data';
 
