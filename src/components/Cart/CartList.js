@@ -7,6 +7,7 @@ function CartList() {
         <Cart/>
         <Cart/>
         <Cart/>
+        <Cart/>
         </>
     )
 }
