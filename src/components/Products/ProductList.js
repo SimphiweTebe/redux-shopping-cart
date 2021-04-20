@@ -1,10 +1,15 @@
 import React from 'react';
 import './Products.scss';
 
-import Product from './Product';
-import {products} from '../../data';
+import { connect } from 'react-redux';
 
-function ProductList() {
+import Product from './Product';
+// import {products} from '../../data';
+
+function ProductList({products}) {
+
+    // const myList = products;
+    console.log(products)
     
     return (
         <section className="products">
@@ -15,4 +20,10 @@ function ProductList() {
     )
 }
 
-export default ProductList
+const mapStateToProps = state => {
+    return {
+        products: state.shop.products
+    }
+}
+
+export default connect(mapStateToProps)(ProductList);
