@@ -5,7 +5,7 @@ import Product from './Product';
 import {products} from '../../data';
 
 function ProductList() {
-    console.log(products)
+    
     return (
         <section className="products">
             {
