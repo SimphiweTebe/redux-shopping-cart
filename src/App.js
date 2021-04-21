@@ -7,12 +7,12 @@ import {
   } from "react-router-dom";
 import CartList from './components/Cart/CartList';
 import Item from './components/Item/Item';
-import { Navbar } from './components/Navbar/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import ProductList from './components/Products/ProductList';
 
 function App() {
     return (
-        <div>
+        <section className="container">
             <Router>
                 <Navbar/>
                 <Switch>
@@ -27,7 +27,7 @@ function App() {
                     </Route>
                 </Switch>
             </Router>
-        </div>
+        </section>
     )
 }
   

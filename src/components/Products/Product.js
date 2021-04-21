@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import { addToCart } from '../../redux/Shopping/shopping-actions';
 
-
-function Product({product}) {
+function Product({product, addToCart}) {
 
     return (
     <div className="product">
@@ -20,7 +21,10 @@ function Product({product}) {
             <Link to={`/product/${product.id}`}>View Item</Link>
             </button>
             
-            <button className="product__buttons--add">
+            <button 
+            className="product__buttons--add"
+            onClick={()=> addToCart(product.id)}
+            >
             Add To Cart
             </button>
         </div>
@@ -28,4 +32,10 @@ function Product({product}) {
     )
 }
 
-export default Product
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addToCart: (id) => dispatch(addToCart(id))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Product);

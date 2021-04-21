@@ -1,18 +1,21 @@
 import React from 'react';
 import './Cart.scss';
-import Image from '../../images/cart_0005_item-6.jpg';
 
-function Cart() {
+function Cart({ item }) {
+
     return (
         <article className="cart__container">
             <div className="cart">
-                <img src={Image} alt="Sneaker" className="cart__image"/>
+                <img src={item.image.default} alt={item.title} className="cart__image"/>
                 <div className="cart__details">
-                    <p className="cart__details--title">Nike 01</p>
-                    <p className="cart__details--desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
-                    <p className="cart__details--price">$200</p>
+                    <p className="cart__details--title">{item.title}</p>
+                    <p className="cart__details--desc">{item.description}</p>
+                    <p className="cart__details--qty">
+                        <span>QTY: </span><input type="number" name="qty" id="qty" value={item.qty}/>
+                    </p>
+                    <p className="cart__details--price">R{item.price}</p>
                     <button className="cart__details--add">
-                    Add To Cart
+                    Remove
                     </button>
                 </div>
             </div>
@@ -20,4 +23,4 @@ function Cart() {
     )
 }
 
-export default Cart
+export default Cart;
