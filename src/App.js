@@ -10,7 +10,9 @@ import Item from './components/Item/Item';
 import Navbar from './components/Navbar/Navbar';
 import ProductList from './components/Products/ProductList';
 
-function App() {
+import { connect } from 'react-redux';
+
+function App({ currentItem }) {
     return (
         <section className="container">
             <Router>
@@ -20,7 +22,9 @@ function App() {
                         <ProductList />
                     </Route>
                     <Route exact path="/product/:id">
-                        <Item/>
+                        {
+                            !currentItem ? (<Redirect to="/" />) : <Item/>
+                        }
                     </Route>
                     <Route exact path="/cart">
                         <CartList />
@@ -30,5 +34,11 @@ function App() {
         </section>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        currentItem: state.shop.currentItem
+    }
+}
   
-export default App;
+export default connect(mapStateToProps)(App);
