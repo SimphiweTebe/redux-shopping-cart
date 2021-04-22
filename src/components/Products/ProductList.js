@@ -4,12 +4,8 @@ import './Products.scss';
 import { connect } from 'react-redux';
 
 import Product from './Product';
-// import {products} from '../../data';
 
 function ProductList({products}) {
-
-    // const myList = products;
-    console.log(products)
     
     return (
         <section className="products">

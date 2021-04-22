@@ -7,12 +7,14 @@ import {
   } from "react-router-dom";
 import CartList from './components/Cart/CartList';
 import Item from './components/Item/Item';
-import { Navbar } from './components/Navbar/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import ProductList from './components/Products/ProductList';
 
-function App() {
+import { connect } from 'react-redux';
+
+function App({ currentItem }) {
     return (
-        <div>
+        <section className="container">
             <Router>
                 <Navbar/>
                 <Switch>
@@ -20,15 +22,23 @@ function App() {
                         <ProductList />
                     </Route>
                     <Route exact path="/product/:id">
-                        <Item/>
+                        {
+                            !currentItem ? (<Redirect to="/" />) : <Item/>
+                        }
                     </Route>
                     <Route exact path="/cart">
                         <CartList />
                     </Route>
                 </Switch>
             </Router>
-        </div>
+        </section>
     )
 }
+
+const mapStateToProps = state => {
+    return {
+        currentItem: state.shop.currentItem
+    }
+}
   
-export default App;
+export default connect(mapStateToProps)(App);
